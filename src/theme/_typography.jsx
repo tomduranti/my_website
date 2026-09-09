@@ -1,0 +1,110 @@
+export const typography = fn => ({
+    fontFamily: 'Inter, sans-serif',
+    h1: {
+        fontSize: '1.875rem',
+        fontWeight: 300,
+        letterSpacing: '-1.65%',
+        textTransform: 'uppercase',
+        color: fn.vars.palette.text.primary,
+    },
+    h2: {
+        // navbar — color set in HamburgerMenu.jsx
+        fontSize: '2rem',
+        [fn.breakpoints.up('md')]: { fontSize: '3.75rem' },
+        [fn.breakpoints.up('lg')]: { fontSize: '5rem' },
+        fontWeight: 400,
+        letterSpacing: 0,
+    },
+    h3: {
+        fontSize: '1.875rem',
+        [fn.breakpoints.up('md')]: { 
+            fontSize: '2.25rem',
+            letterSpacing: 0,
+        },
+        [fn.breakpoints.up('lg')]: { 
+            fontSize: '1.875rem',
+            letterSpacing: '-1.65%',
+        },
+        fontWeight: 400,
+        letterSpacing: '-1.65%',
+        textTransform: 'uppercase',
+        color: fn.vars.palette.text.primary,
+    },
+    h4: {
+        fontSize: '1.25rem',
+        [fn.breakpoints.up('md')]: {
+            fontSize: '1.875rem',
+            fontWeight: 300,
+            lineHeight: 1,
+        },
+        fontWeight: 400,
+        letterSpacing: 0,
+        lineHeight: 1.563,
+        color: fn.vars.palette.text.primary,
+    },
+    h5: {
+        // footer
+        fontSize: '.938rem',
+        [fn.breakpoints.up('md')]: {
+            fontSize: '1.563rem',
+            fontWeight: 400,
+        },
+        fontWeight: 300,
+        letterSpacing: 0,
+        color: fn.vars.palette.text.secondary,
+    },
+    body1: {
+        fontSize: '1.875rem',
+        fontWeight: 300,
+        letterSpacing: '-5%',
+        lineHeight: 1.167,
+        color: fn.vars.palette.text.secondary,
+    },
+    body2: {
+        fontSize: '1.25rem',
+        fontWeight: 300,
+        letterSpacing: '-5%',
+        lineHeight: '20px',
+        color: fn.vars.palette.text.secondary,
+    },
+    subtitle1: {
+        fontSize: '1.875rem',
+        fontWeight: 300,
+        letterSpacing: '-5%',
+        lineHeight: 1.25,
+        color: fn.vars.palette.text.primary,
+    },
+    detailedProjectName: {
+        fontSize: '4.375rem',
+        [fn.breakpoints.up('lg')]: {
+            fontSize: '7.5rem',
+        },
+        fontWeight: 400,
+        letterSpacing: 0,
+        textTransform: 'uppercase',
+        color: fn.vars.palette.text.primary,
+    },
+    detailedProjectDescription: {
+        fontSize: '1.563rem',
+        fontWeight: 300,
+        letterSpacing: '-5%',
+        lineHeight: 1.2,
+        color: fn.vars.palette.text.secondary,
+    },
+    detailedStackDescription: {
+        fontSize: '1.563rem',
+        fontWeight: 400,
+        letterSpacing: '-5%',
+        lineHeight: 1.875,
+        textTransform: 'uppercase',
+        color: fn.vars.palette.text.secondary,
+    },
+    detailedSectionTitle: {
+        fontSize: '2.5rem',
+        fontWeight: 400,
+        letterSpacing: 0,
+        lineHeight: 2.813,
+        textTransform: 'uppercase',
+        color: fn.vars.palette.text.primary,
+    },
+})

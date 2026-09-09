@@ -1,0 +1,72 @@
+.negative_inline_margin {
+    margin-inline-start: -8px;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.hamburger_inner,
+.hamburger_inner::before,
+.hamburger_inner::after {
+  block-size: 4px;
+  inline-size: 32px;
+  background: var(--mui-palette-icon-main);
+  display: block;
+  transition: transform 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+.hamburger_inner {
+  position: relative;
+}
+
+.hamburger_inner::before,
+.hamburger_inner::after {
+  content: '';
+  position: absolute;
+}
+
+.hamburger_inner::before {
+    /* this value controls the spacing between bars */
+  transform: translateY(-7px);
+}
+
+.hamburger_inner::after {
+    /* this value controls the spacing between bars */
+  transform: translateY(7px);
+}
+
+.change_hamburger_inner {
+  background: transparent;
+}
+
+.change_hamburger_inner::after {
+  transform: rotate(45deg);
+}
+
+.change_hamburger_inner::before {
+  transform: rotate(-45deg);
+}
+
+.topnav_link_hamburger {
+    display: none;
+    background: var(--mui-palette-primary-main);
+    position: absolute;
+    top: 3.3rem;
+    left: 0;
+    inline-size: 100%;
+    padding-block-end: .5rem;
+    /* z-index  necessary to fight swiper cards in About.jsx*/
+    z-index: 2;
+  }
+
+.topnav_hamburger_isopen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+}
