@@ -1,4 +1,5 @@
 //react
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router';
 import Footer from './components/organisms/Footer/Footer.jsx';
 import Navbar from './components/organisms/Navbar/Navbar.jsx';
@@ -15,10 +16,17 @@ import About from './pages/About/About.jsx';
 import Projects from './pages/Projects/Projects.jsx';
 import Details from './pages/Details/Details.jsx';
 
+//functions
+import { openingMessageToConsole } from './utils/openingMessageToConsole.js';
+
 //style
 import theme from './theme/theme.jsx';
 
 export default function App() {
+
+  useEffect(() => {
+    console.log(openingMessageToConsole);
+  }, [])
 
   return (
     <ThemeProvider theme={theme}>

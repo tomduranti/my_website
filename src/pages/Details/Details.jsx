@@ -1,5 +1,4 @@
 //react
-import { useId } from 'react';
 import { useParams } from 'react-router';
 
 //mui
@@ -56,18 +55,16 @@ function Paragraph({ header, projectName, prop = '' }) {
 export default function Details() {
 
     let { projectName } = useParams();
-    const images = [text[projectName].image.mainFeature, text[projectName].image.secondFeature, text[projectName].image.thirdFeature];
 
-    const id = useId();
-    const imageList = images.map(image => (
-        <li key={id}>
-            <Box component="img" src={image} alt={`${text[projectName].title} image`} sx={{ inlineSize: { xs: '13.125rem', lg: '21.875rem', }, blockSize: { xs: '13.063rem', lg: '21.875rem', }, }}></Box>
+    const imageList = text[projectName].image.secondary.map(image => (
+        <li key={image.id}>
+            <Box component="img" src={image.link} alt={`${text[projectName].title} image`} sx={{ inlineSize: { xs: '13.125rem', lg: '21.875rem', }, blockSize: { xs: '13.063rem', lg: '21.875rem', }, }}></Box>
         </li>
     ));
 
     const stackList = text[projectName].stack.map(stack => (
-        <li key={id}>
-            <Typography variant='detailedProjectDescription' component='span'>{stack}</Typography>
+        <li key={stack.id}>
+            <Typography variant='detailedProjectDescription' component='span'>{stack.title}</Typography>
         </li>
     ));
 
@@ -108,7 +105,7 @@ export default function Details() {
                 </Stack>
             </Stack>
 
-            <Box component="img" src={text[projectName].image.hero} alt={`${text[projectName].title} scroject screenshot`} sx={{ inlineSize: '100%', blockSize: { md: '385px', lg: '700px', } }}></Box>
+            <Box component="img" src={text[projectName].image.hero.link} alt={`${text[projectName].title} project screenshot`} sx={{ inlineSize: '100%', blockSize: { md: '385px', lg: '700px', } }}></Box>
 
             <Paragraph header='goal' projectName={projectName} />
             <Paragraph header='highlights' projectName={projectName} prop={{ alignSelf: { lg: 'end' } }} />

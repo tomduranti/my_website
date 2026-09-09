@@ -10,6 +10,9 @@ import sassLogo from '../../assets/Skill/sass_logo.svg';
 import storybookLogo from '../../assets/Skill/storybook_logo.svg';
 import tailwindLogo from '../../assets/Skill/tailwind_logo.svg';
 
+//functions
+import { generateId } from '../../utils/generateId.js';
+
 export const text = {
     about: {
         title: 'about me',
@@ -22,21 +25,21 @@ export const text = {
     certifications: {
         title: 'certifications',
         certificationList: [
-            { title: 'GitLab Certified Associate', link: 'https://www.credly.com/badges/e1a15a4f-4038-4d33-82ec-24758cc9c72c/public_url' },
-            { title: 'JSE™ – Certified Entry-Level JavaScript Programmer (proctored)', link: 'https://www.credly.com/badges/e5b7b54b-3512-4991-af78-2c92eb420e81/public_url' },
+            { title: 'GitLab Certified Associate', id: generateId(), link: 'https://www.credly.com/badges/e1a15a4f-4038-4d33-82ec-24758cc9c72c/public_url' },
+            { title: 'JSE™ – Certified Entry-Level JavaScript Programmer (proctored)', id: generateId(), link: 'https://www.credly.com/badges/e5b7b54b-3512-4991-af78-2c92eb420e81/public_url' },
         ]
     }
 }
 
 export const icons = [
-    { name: 'HTML5', icon: htmlLogo },
-    { name: 'CSS3', icon: cssLogo },
-    { name: 'JavaScript ES6+', icon: JSLogo },
-    { name: 'Tailwind', icon: tailwindLogo },
-    { name: 'Sass', icon: sassLogo },
-    { name: 'React', icon: reactLogo },
-    { name: 'Mui', icon: muiLogo },    
-    { name: 'Storybook', icon: storybookLogo }, 
-    { name: 'Git', icon: gitLogo },   
-    { name: 'Figma', icon: figmaLogo },
+    { name: 'HTML5', id: generateId(), icon: htmlLogo },
+    { name: 'CSS3', id: generateId(), icon: cssLogo },
+    { name: 'JavaScript ES6+', id: generateId(), icon: JSLogo },
+    { name: 'Tailwind', id: generateId(), icon: tailwindLogo },
+    { name: 'Sass', id: generateId(), icon: sassLogo },
+    { name: 'React', id: generateId(), icon: reactLogo },
+    { name: 'Mui', id: generateId(), icon: muiLogo },    
+    { name: 'Storybook', id: generateId(), icon: storybookLogo }, 
+    { name: 'Git', id: generateId(), icon: gitLogo },   
+    { name: 'Figma', id: generateId(), icon: figmaLogo },
 ];

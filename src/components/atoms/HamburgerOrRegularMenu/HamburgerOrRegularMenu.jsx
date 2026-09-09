@@ -1,5 +1,5 @@
 //react
-import { useState, useId } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router';
 
 //mui
@@ -11,25 +11,25 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import theme from '../../../theme/theme.jsx';
 import styles from './_HamburgerOrRegularMenu.module.css';
 
-function HamburgerOrRegularLink({ nameOfThePage, path, fn }) {
-    const id = useId();
-    return (
-        <li key={id}>
-            <NavLink to={path} style={({ isActive }) => ({ color: isActive ? theme.vars.palette.text.primary : theme.vars.palette.text.contrastText })} onClick={fn}>
-                <Typography variant='h2'>{nameOfThePage}</Typography>
-            </NavLink>
-        </li>
-    )
-}
+//text
+import { text } from './HamburgerOrRegularMenu.js';
+
 
 export default function HamburgerMenu() {
     const [isOpen, setOpen] = useState(false);
-
     const regularMenu = useMediaQuery((theme) => theme.breakpoints.up('md'));
-
     const handleClick = () => {
         setOpen(!isOpen);
     }
+    const hamburgerOrRegularLink = text.map(item => {
+        return (
+            <li key={item.id}>
+                <NavLink to={item.link} style={({ isActive }) => ({ color: isActive ? theme.vars.palette.text.primary : theme.vars.palette.text.contrastText })} onClick={handleClick}>
+                    <Typography variant='h2'>{item.title}</Typography>
+                </NavLink>
+            </li>
+        );
+    })
 
     return (
         <>
@@ -43,12 +43,8 @@ export default function HamburgerMenu() {
                     )
             }
 
-            <nav className={regularMenu ? null : `${styles.topnav_link_hamburger} ${isOpen && styles.topnav_hamburger_isopen}` } >
-                <Box component='ul' sx={{ display: { md: 'flex', }, gap: { md: '1.5rem', }, }}>
-                    <HamburgerOrRegularLink nameOfThePage='home' path='/' fn={handleClick} />
-                    <HamburgerOrRegularLink nameOfThePage='about' path='about' fn={handleClick} />
-                    <HamburgerOrRegularLink nameOfThePage='projects' path='projects' fn={handleClick} />
-                </Box>
+            <nav className={regularMenu ? null : `${styles.topnav_link_hamburger} ${isOpen && styles.topnav_hamburger_isopen}`} >
+                <Box component='ul' sx={{ display: { md: 'flex', }, gap: { md: '1.5rem', }, }}>{hamburgerOrRegularLink}</Box>
             </nav>
         </>
     );

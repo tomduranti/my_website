@@ -1,5 +1,4 @@
 //react
-import { useId } from 'react';
 import { Link } from 'react-router';
 
 //mui
@@ -67,10 +66,8 @@ function ProjectCard({ image, title, paragraph, linkGithub, linkLive }) {
 
 export default function Projects() {
 
-    const id = useId();
-
     const project = text.projects.map(item => (
-        <Box component='li' key={id} sx={{ maxInlineSize: { xs: '500px', md: '100%', }, inlineSize: { md: '100%' }, }}>
+        <Box component='li' key={item.id} sx={{ maxInlineSize: { xs: '500px', md: '100%', }, inlineSize: { md: '100%' }, }}>
             <ProjectCard image={item.image} title={item.title} paragraph={item.paragraph} linkGithub={item.linkGithub} linkLive={item.linkLive} />
         </Box>
     ));

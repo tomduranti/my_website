@@ -1,6 +1,3 @@
-//react
-import { useId } from 'react';
-
 //mui
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
@@ -33,10 +30,8 @@ function SocialLink({ social, where }) {
 }
 
 export default function Footer() {
-    const id = useId();
-
     const links = text.map(item => (
-        <li key={id}>
+        <li key={item.id}>
             <SocialLink social={item.title} where={item.link}></SocialLink>
         </li>
     ));

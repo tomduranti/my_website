@@ -1,6 +1,3 @@
-//react
-import { useId } from 'react';
-
 //mui
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -18,10 +15,8 @@ import { icons, text } from './About.js';
 
 export default function About() {
 
-    const id = useId();
-
-    const skills = icons.map((item, index) => (
-        <Grid key={index} sx={{
+    const skills = icons.map(item => (
+        <Grid key={item.id} sx={{
             flexBasis: '20%',
             maxWidth: '17%',
             display: 'flex',
@@ -34,7 +29,7 @@ export default function About() {
     ));
 
     const certifications = text.certifications.certificationList.map(item => (
-        <li key={id}>
+        <li key={item.id}>
             <Link href={item.link} aria-label={`${item.title} certification`}>
                 <Typography variant="h4">{item.title}</Typography>
             </Link>
