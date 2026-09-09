@@ -1,4 +1,5 @@
 //react
+import { useId } from 'react';
 import { useParams } from 'react-router';
 
 //mui
@@ -57,14 +58,15 @@ export default function Details() {
     let { projectName } = useParams();
     const images = [text[projectName].image.mainFeature, text[projectName].image.secondFeature, text[projectName].image.thirdFeature];
 
-    const imageList = images.map((image, index) => (
-        <li key={index}>
-            <Box component="img" src={image} alt='' sx={{ inlineSize: { xs: '13.125rem', lg: '21.875rem', }, blockSize: { xs: '13.063rem', lg: '21.875rem', }, }}></Box>
+    const id = useId();
+    const imageList = images.map(image => (
+        <li key={id}>
+            <Box component="img" src={image} alt={`${text[projectName].title} image`} sx={{ inlineSize: { xs: '13.125rem', lg: '21.875rem', }, blockSize: { xs: '13.063rem', lg: '21.875rem', }, }}></Box>
         </li>
     ));
 
-    const stackList = text[projectName].stack.map((stack, index) => (
-        <li key={index}>
+    const stackList = text[projectName].stack.map(stack => (
+        <li key={id}>
             <Typography variant='detailedProjectDescription' component='span'>{stack}</Typography>
         </li>
     ));
@@ -97,7 +99,7 @@ export default function Details() {
                         <Grid size='grow'>
                             <Stack spacing={2}>
                                 <Typography variant='detailedStackDescription'>status</Typography>
-                                <Link href={text[projectName].status.link}>
+                                <Link href={text[projectName].status.link} aria-label={`go to ${text[projectName].title} live project`}>
                                     <Typography variant='detailedProjectDescription' component='span' sx={{ color: theme.vars.palette.text.status.live }}>{text[projectName].status.status}</Typography>
                                 </Link>
                             </Stack>
@@ -106,7 +108,7 @@ export default function Details() {
                 </Stack>
             </Stack>
 
-            <Box component="img" src={text[projectName].image.hero} alt='' sx={{ inlineSize: '100%', blockSize: { md: '385px', lg: '700px', } }}></Box>
+            <Box component="img" src={text[projectName].image.hero} alt={`${text[projectName].title} scroject screenshot`} sx={{ inlineSize: '100%', blockSize: { md: '385px', lg: '700px', } }}></Box>
 
             <Paragraph header='goal' projectName={projectName} />
             <Paragraph header='highlights' projectName={projectName} prop={{ alignSelf: { lg: 'end' } }} />

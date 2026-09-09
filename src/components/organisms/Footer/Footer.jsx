@@ -1,3 +1,6 @@
+//react
+import { useId } from 'react';
+
 //mui
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
@@ -22,7 +25,7 @@ function SvgIconArrowFooter(props) {
 
 function SocialLink({ social, where }) {
     return (
-        <Link href={where} style={{ display: 'flex', gap: '.5rem', 'alignItems': 'center', }} color={theme.vars.palette.text.secondary} underline='none'>
+        <Link href={where} style={{ display: 'flex', gap: '.5rem', 'alignItems': 'center', }} color={theme.vars.palette.text.secondary} underline='none' aria-label={`go to ${social}`}>
             <Typography variant='h5'>{social}</Typography>
             <SvgIconArrowFooter sx={{ inlineSize: { xs: '.5rem', md: '1rem' }, color: theme.vars.palette.text.secondary }} />
         </Link>
@@ -30,9 +33,10 @@ function SocialLink({ social, where }) {
 }
 
 export default function Footer() {
+    const id = useId();
 
-    const links = text.map((item, index) => (
-        <li key={index}>
+    const links = text.map(item => (
+        <li key={id}>
             <SocialLink social={item.title} where={item.link}></SocialLink>
         </li>
     ));

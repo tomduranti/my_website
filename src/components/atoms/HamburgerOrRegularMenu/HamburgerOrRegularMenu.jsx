@@ -1,5 +1,5 @@
 //react
-import { useState } from 'react';
+import { useState, useId } from 'react';
 import { NavLink } from 'react-router';
 
 //mui
@@ -12,8 +12,9 @@ import theme from '../../../theme/theme.jsx';
 import styles from './_HamburgerOrRegularMenu.module.css';
 
 function HamburgerOrRegularLink({ nameOfThePage, path, fn }) {
+    const id = useId();
     return (
-        <li>
+        <li key={id}>
             <NavLink to={path} style={({ isActive }) => ({ color: isActive ? theme.vars.palette.text.primary : theme.vars.palette.text.contrastText })} onClick={fn}>
                 <Typography variant='h2'>{nameOfThePage}</Typography>
             </NavLink>
@@ -36,13 +37,13 @@ export default function HamburgerMenu() {
                 regularMenu
                     ? null
                     : (
-                        <button className={styles.hamburger} type='button' onClick={handleClick}>
-                            <span className={`${styles.hamburger_inner} ${isOpen ? styles['change_hamburger_inner'] : null}`}></span>
+                        <button className={styles.hamburger} type='button' onClick={handleClick} aria-label='hamburger menu button'>
+                            <span className={`${styles.hamburger_inner} ${isOpen ? styles.change_hamburger_inner : null}`}></span>
                         </button>
                     )
             }
 
-            <nav className={regularMenu ? null : `${styles.topnav_link_hamburger} ${isOpen && styles['topnav_hamburger_isopen']}` } >
+            <nav className={regularMenu ? null : `${styles.topnav_link_hamburger} ${isOpen && styles.topnav_hamburger_isopen}` } >
                 <Box component='ul' sx={{ display: { md: 'flex', }, gap: { md: '1.5rem', }, }}>
                     <HamburgerOrRegularLink nameOfThePage='home' path='/' fn={handleClick} />
                     <HamburgerOrRegularLink nameOfThePage='about' path='about' fn={handleClick} />

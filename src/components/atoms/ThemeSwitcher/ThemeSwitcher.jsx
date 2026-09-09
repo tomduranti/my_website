@@ -18,8 +18,8 @@ export default function ThemeSwitcher() {
     }
 
     return (
-        <button type='button' style={{ lineHeight: 0 }} onClick={handleClick}>
-            <svg width='24' height='24' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <button type='button' style={{ lineHeight: 0 }} onClick={handleClick} aria-label='light/dark mode button'>
+            <svg width='24' height='24' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg' >
                 <circle cx='4.2' cy='7.5' r='3.5' fill={mode === 'light' ? sun : 'none'} stroke={sun} strokeWidth='1' />
                 <path
                     d='M 7.5 1.5 A 6 6 0 0 1 7.5 13.5 A 8.5 8.5 0 0 0 7.5 1.5 Z'

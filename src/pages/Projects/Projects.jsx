@@ -1,4 +1,5 @@
 //react
+import { useId } from 'react';
 import { Link } from 'react-router';
 
 //mui
@@ -41,6 +42,8 @@ function ProjectCard({ image, title, paragraph, linkGithub, linkLive }) {
                         sx={{ blockSize: { xs: '200px', lg: '350px', }, }}
                         image={image}
                         title={title}
+                        role="img"
+                        aria-label={`${title} project screenshot`}
                     />
                 </Link>
             </Box>
@@ -50,8 +53,8 @@ function ProjectCard({ image, title, paragraph, linkGithub, linkLive }) {
                         {title}
                     </Typography>
                     <Stack direction='row' spacing={2}>
-                        <a href={linkGithub}><GitHubIcon /></a>
-                        <a href={linkLive}><LaunchIcon /></a>
+                        <a href={linkGithub} aria-label='go to github repo'><GitHubIcon /></a>
+                        <a href={linkLive} aria-label='go to live project'><LaunchIcon /></a>
                     </Stack>
                 </Stack>
                 <Typography variant='body2'>
@@ -64,8 +67,10 @@ function ProjectCard({ image, title, paragraph, linkGithub, linkLive }) {
 
 export default function Projects() {
 
-    const project = text.projects.map((item, index) => (
-        <Box component='li' key={index} sx={{ maxInlineSize: { xs: '500px', md: '100%', }, inlineSize: { md: '100%' }, }}>
+    const id = useId();
+
+    const project = text.projects.map(item => (
+        <Box component='li' key={id} sx={{ maxInlineSize: { xs: '500px', md: '100%', }, inlineSize: { md: '100%' }, }}>
             <ProjectCard image={item.image} title={item.title} paragraph={item.paragraph} linkGithub={item.linkGithub} linkLive={item.linkLive} />
         </Box>
     ));
