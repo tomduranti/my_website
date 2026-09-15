@@ -35,15 +35,36 @@ function SvgIconArrowDecoration(props) {
 function ProjectCard({ image, title, paragraph, linkGithub, linkLive }) {
     return (
         <Card sx={{ background: 'transparent', boxShadow: '0', display: 'flex', flexDirection: { xs: 'column', md: 'row', }, gap: '2rem' }}>
-            <Box sx={{ order: { md: 2, }, inlineSize: { md: '50%', } }}>
+            <Box sx={{ order: { md: 2 }, inlineSize: { md: '50%' } }}>
                 <Link to={`/projects/${title}`}>
-                    <CardMedia
-                        sx={{ blockSize: { xs: '200px', lg: '350px', }, }}
-                        image={image}
-                        title={title}
-                        role="img"
-                        aria-label={`${title} project screenshot`}
-                    />
+                    <Box
+                        component="picture"
+                        sx={{
+                            display: 'block',
+                            width: '100%',
+                            blockSize: { xs: '212px', md: '227px', lg: '288px' },
+                            objectFit: 'cover',
+                        }}
+                    >
+                        <source
+                            media="(min-width: 1440px)"
+                            srcSet={image.lg}
+                        />
+                        <source
+                            media="(min-width: 768px)"
+                            srcSet={image.md}
+                        />
+                        <Box
+                            component="img"
+                            src={image.xs}
+                            alt={`${title} project screenshot`}
+                            sx={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'contain',
+                            }}
+                        />
+                    </Box>
                 </Link>
             </Box>
             <CardContent sx={{ padding: '0', '&:last-child': { paddingBottom: 0 }, display: { md: 'flex' }, flexDirection: { md: 'column', }, justifyContent: { md: 'flex-end', }, inlineSize: { md: '50%', }, }}>
@@ -68,7 +89,7 @@ export default function Projects() {
 
     const project = text.projects.map(item => (
         <Box component='li' key={item.id} sx={{ maxInlineSize: { xs: '500px', md: '100%', }, inlineSize: { md: '100%' }, }}>
-            <ProjectCard image={item.image} title={item.title} paragraph={item.paragraph} linkGithub={item.linkGithub} linkLive={item.linkLive} />
+            <ProjectCard image={item.image} title={item.title} paragraph={item.paragraph} linkGithub={item.linkGithub} linkLive={item.linkLive} sx={{ textDecoration: 'capitalize', }} />
         </Box>
     ));
 

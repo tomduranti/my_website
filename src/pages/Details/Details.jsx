@@ -56,9 +56,29 @@ export default function Details() {
 
     let { projectName } = useParams();
 
-    const imageList = text[projectName].image.secondary.map(image => (
+    const imageList = text[projectName].image.gallery.map(image => (
         <li key={image.id}>
-            <Box component="img" src={image.link} alt={`${text[projectName].title} image`} sx={{ inlineSize: { xs: '13.125rem', lg: '21.875rem', }, blockSize: { xs: '13.063rem', lg: '21.875rem', }, }}></Box>
+            <Box component="picture" sx={{ inlineSize: { xs: '95%', } }}>
+                <source
+                    media="(min-width: 1440px)"
+                    srcSet={image.link.lg}
+                />
+                <source
+                    media="(min-width: 768px)"
+                    srcSet={image.link.md}
+                />
+                <Box
+                    component="img"
+                    src={image.link.xs}
+                    alt={`${text[projectName].title} image`}
+                    sx={{
+                        inlineSize: '100%',
+                        blockSize: '100%',
+                        aspectRatio: { xs: 16 / 9, md: 3 / 2, },
+                        objectFit: 'cover',
+                    }}
+                />
+            </Box>
         </li>
     ));
 
@@ -78,7 +98,7 @@ export default function Details() {
 
                 <Stack spacing={{ xs: 4, md: 7, }} sx={{ inlineSize: '100%', maxInlineSize: { lg: '600px', }, }}>
                     <Typography variant='detailedProjectDescription' >{text[projectName].description}</Typography>
-                    <Grid container spacing={2} sx={{ inlineSize: { md: '100%', }, maxInlineSize: { md: '368px', }, alignSelf: { md: 'center', lg: 'start', }, }}>
+                    <Grid container spacing={2} sx={{ inlineSize: { md: '100%', }, maxInlineSize: { md: '33rem', }, alignSelf: { md: 'center', lg: 'start', }, textAlign: 'center', }}>
                         <Grid size='grow'>
                             <Stack spacing={2}>
                                 <Typography variant='detailedStackDescription'>type</Typography>
@@ -105,11 +125,30 @@ export default function Details() {
                 </Stack>
             </Stack>
 
-            <Box component="img" src={text[projectName].image.hero.link} alt={`${text[projectName].title} project screenshot`} sx={{ inlineSize: '100%', blockSize: { md: '385px', lg: '700px', } }}></Box>
+            <Box component="picture" sx={{ objectFit: 'cover', objectPosition: 'center top', inlineSize: '100%', }}>
+                <source
+                    media="(min-width: 1440px)"
+                    srcSet={text[projectName].image.hero.link.lg}
+                />
+                <source
+                    media="(min-width: 768px)"
+                    srcSet={text[projectName].image.hero.link.md}
+                />
+                <Box
+                    component="img"
+                    src={text[projectName].image.hero.link.xs}
+                    alt={`${text[projectName].title} project screenshot`}
+                    sx={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'contain',
+                    }}
+                />
+            </Box>
 
             <Paragraph header='goal' projectName={projectName} />
             <Paragraph header='highlights' projectName={projectName} prop={{ alignSelf: { lg: 'end' } }} />
-            <Box component='ul' sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row', }, justifyContent: { md: 'space-between', lg: 'unset', }, gap: { xs: '1.5rem', lg: '3rem', }, alignItems: 'center', alignSelf: { lg: 'center', }, }}>{imageList}</Box>
+            <Box component='ul' sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row', }, justifyContent: { md: 'space-between', lg: 'unset', }, gap: { xs: '1.5rem', md: '1rem', lg: '3rem', }, alignItems: 'center', alignSelf: { lg: 'center', }, }}>{imageList}</Box>
             <Paragraph header='futureIdeas' projectName={projectName} prop='margin-block-end: 4rem' />
         </>
 
