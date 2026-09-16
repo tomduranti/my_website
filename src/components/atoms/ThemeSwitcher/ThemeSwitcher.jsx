@@ -5,13 +5,13 @@ import { useColorScheme } from '@mui/material/styles';
 import theme from '../../../theme/theme.jsx';
 
 export default function ThemeSwitcher() {
-    const { mode, setMode } = useColorScheme();
+    const { mode, systemMode, setMode } = useColorScheme();
 
-    if (!mode) {
-        return null;
-    }
+    const resolvedMode = mode === 'system' ? systemMode : mode;
+    if (!resolvedMode) return null;
+    if (!mode) return null;
 
-    const sun = theme.colorSchemes[mode]?.palette.icon.main;
+    const sun = theme.colorSchemes[resolvedMode]?.palette.icon.main;
 
     const handleClick = () => {
         setMode(mode === 'light' ? 'dark' : 'light');
