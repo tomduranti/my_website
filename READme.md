@@ -14,7 +14,7 @@ This is V1 of my website showcasing the best works and other information. It was
 - Mobile-first workflow
 - Cross-browser compatibility (Chrome, Edge, Safari, Opera, Firefox, IE)
 
-### Screenshot (live site: [mosaic](https://tomduranti.github.io/my_website/))
+### Screenshot (live site: [tomduranti.com](https://tomduranti.com))
 
 ![](./_resources/my_website_demo.gif)
 
