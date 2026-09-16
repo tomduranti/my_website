@@ -1,16 +1,23 @@
+//assets
+import mosaicPresentationXs from '../../assets/Projects/Presentation/xs/mosaicProjectPresentation.webp';
+import mosaicPresentationMd from '../../assets/Projects/Presentation/md/mosaicProjectPresentation.webp';
+import mosaicPresentationLg from '../../assets/Projects/Presentation/lg/mosaicProjectPresentation.webp';
+import pollenPresentationXs from '../../assets/Projects/Presentation/xs/pollenProjectPresentation.webp';
+import pollenPresentationMd from '../../assets/Projects/Presentation/md/pollenProjectPresentation.webp';
+import pollenPresentationLg from '../../assets/Projects/Presentation/lg/pollenProjectPresentation.webp';
+
 //functions
 import { generateId } from '../../utils/generateId.js';
 
 export const text = {
     title: "things i've built",
-    paragraph: 'Lorem ipsum dolor sit amet consectetur adipiscing elit est viverra, nec convallis sociis leo dignissim aliquet donec egestas',
     projects: [
         {
             title: 'mosaic', id: generateId(),
             image: {
-                xs: 'src/assets/Projects/Presentation/xs/mosaicProjectPresentation.png',
-                md: 'src/assets/Projects/Presentation/md/mosaicProjectPresentation.png',
-                lg: 'src/assets/Projects/Presentation/lg/mosaicProjectPresentation.png'
+                xs: mosaicPresentationXs,
+                md: mosaicPresentationMd,
+                lg: mosaicPresentationLg
             },
             linkGithub: 'https://github.com/tomduranti/mosaic',
             linkLive: 'https://tomduranti.github.io/mosaic/home',
@@ -20,9 +27,9 @@ export const text = {
             title: 'pollen',
             id: generateId(),
             image: {
-                xs: 'src/assets/Projects/Presentation/xs/pollenProjectPresentation.png',
-                md: 'src/assets/Projects/Presentation/md/pollenProjectPresentation.png',
-                lg: 'src/assets/Projects/Presentation/lg/pollenProjectPresentation.png'
+                xs: pollenPresentationXs,
+                md: pollenPresentationMd,
+                lg: pollenPresentationLg
             },
             linkGithub: 'https://github.com/tomduranti/pollen',
             linkLive: 'https://tomduranti.github.io/pollen/signup',

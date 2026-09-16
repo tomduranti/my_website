@@ -80,7 +80,7 @@ export const text = {
             title: 'project goal',
             paragraphs: [
                 `The idea behind this project was to have a single app to keep up with trending movies and TV shows.
-                    I then built upon that by adding a bookmarking section for "watch later" items.
+                    I then built upon that by adding a bookmarking section for 'watch later' items.
                     These requirements steered the implementation toward data caching in React useStates, since frequent API calls might cause a bottleneck.
                     To give trending media visual priority, I built a carousel.`,
                 `The last phase of the project was implementing a trailer feature. This specific feature wasn't
@@ -100,8 +100,8 @@ export const text = {
         futureIdeas: {
             title: 'future ideas',
             paragraphs: [
-                `The hard-earned lesson of this project is that "temporary" crappy code is here to stay.
-                    In the early stage, I created messy dependencies, one-shot components, and a jungle of folders and subfolders, just to "do things quickly and move on".
+                `The hard-earned lesson of this project is that 'temporary' crappy code is here to stay.
+                    In the early stage, I created messy dependencies, one-shot components, and a jungle of folders and subfolders, just to 'do things quickly and move on'.
                     I soon realised this approach would backfire.
                     I refactored toward atomic design, modular Sass, and BEM, and now apply that structure from day one on every new project.`,
                 `One feature I might add down the line is the integration with a showtime API to check which cinemas offer that movie nearby.

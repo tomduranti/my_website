@@ -18,7 +18,7 @@ export const text = {
     about: {
         title: 'about me',
         paragraph: [
-            { text: `You won't read yet another "passionate", "detail-oriented", I-am-bullshit bio. I promise.`, id: generateId() },
+            { text: `You won't read yet another 'passionate', 'detail-oriented' bullshit bio. I promise.`, id: generateId() },
             { text: `I moved into tech after graduation and worked as a computational linguist. Building chatbots for a living gave me my first real taste of software development and coding practices.`, id: generateId() },
             {
                 text: `As the company's projects expanded, I lost touch with how my work affected real users.
