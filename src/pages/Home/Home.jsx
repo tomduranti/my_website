@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 
 //custom components
 import CustomSectionLayout from '../../components/styled/Layout.jsx';
+import SEO from '../../components/atoms/seo/seo.jsx';
 
 //assets
 import square from '../../assets/Figures/square.png';
@@ -28,5 +29,13 @@ export default function Home() {
             </Stack>
         </>;
 
-    return <CustomSectionLayout>{children}</CustomSectionLayout>;
+    return (
+        <>
+            <SEO
+                title='About — Tom Duranti'
+                description='Tom Duranti — frontend developer. Building responsive, scalable web apps'
+            />
+            <CustomSectionLayout>{children}</CustomSectionLayout>
+        </>
+    );
 }

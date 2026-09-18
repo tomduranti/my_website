@@ -12,6 +12,7 @@ import Typography from '@mui/material/Typography';
 
 //custom components
 import CustomSectionLayout from '../../components/styled/Layout.jsx';
+import SEO from '../../components/atoms/seo/seo.jsx';
 
 //style
 import theme from '../../theme/theme.jsx';
@@ -152,5 +153,13 @@ export default function Details() {
             <Paragraph header='futureIdeas' projectName={projectName} prop='margin-block-end: 4rem' />
         </>
 
-    return <CustomSectionLayout>{children}</CustomSectionLayout>;
+    return (
+        <>
+            <SEO
+                title={`${text[projectName].title} — Tom Duranti`}
+                description={`${text[projectName].title}, a ${text[projectName].type} by Tom Duranti. ${text[projectName].description}`}
+            />
+            <CustomSectionLayout>{children}</CustomSectionLayout>
+        </>
+    );
 }

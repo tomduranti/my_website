@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 
 //custom components
 import CustomSectionLayout from '../../components/styled/Layout.jsx';
+import SEO from '../../components/atoms/seo/seo.jsx';
 
 //text
 import { icons, text } from './About.js';
@@ -20,10 +21,10 @@ export default function About() {
             flexBasis: '20%',
             maxWidth: '17%',
             display: 'flex',
-            justifyContent: {xs: 'center', lg: 'start', }
+            justifyContent: { xs: 'center', lg: 'start', }
         }} >
             <Tooltip title={item.name} enterTouchDelay={100} leaveTouchDelay={50} arrow>
-                <Box component='img' sx={{ inlineSize: { md: '72px', lg: '76px', }}} src={item.icon} alt={item.name}></Box>
+                <Box component='img' sx={{ inlineSize: { md: '72px', lg: '76px', } }} src={item.icon} alt={item.name}></Box>
             </Tooltip>
         </Grid>
     ));
@@ -53,7 +54,7 @@ export default function About() {
             }} spacing={5}>
                 <Typography sx={{ inlineSize: { lg: '50%', }, }} variant='h3'>{text.about.title}</Typography>
                 <Stack sx={{ alignContent: 'center', inlineSize: { lg: '50%', }, }} spacing={4}>
-                <Box component='ul' sx={{ display: 'flex', flexDirection: 'column', gap: { xs: '2rem', }, }}>{paragraphs}</Box>
+                    <Box component='ul' sx={{ display: 'flex', flexDirection: 'column', gap: { xs: '2rem', }, }}>{paragraphs}</Box>
                 </Stack>
 
             </Stack>
@@ -78,5 +79,13 @@ export default function About() {
             </Stack>
         </>;
 
-    return <CustomSectionLayout>{children}</CustomSectionLayout>;
+    return (
+        <>
+            <SEO
+                title='About — Tom Duranti'
+                description='Tom Duranti, frontend developer. Skills in React, JavaScript, and MUI, plus certifications and background'
+            />
+            <CustomSectionLayout>{children}</CustomSectionLayout>
+        </>
+    );
 }
