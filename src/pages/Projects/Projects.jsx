@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 
 //custom components
 import CustomSectionLayout from '../../components/styled/Layout.jsx';
+import SEO from '../../components/atoms/seo/seo.jsx';
 
 //style
 import theme from '../../theme/theme.jsx';
@@ -101,5 +102,15 @@ export default function Projects() {
             <Box component='ul' sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: { xs: '3.5rem', md: '1.5rem', }, inlineSize: '100%', maxInlineSize: { md: '61.5rem', }, alignSelf: { md: 'end', } }}>{project}</Box>
         </>;
 
-    return <CustomSectionLayout dir='row' justify='space-around' >{children}</CustomSectionLayout>;
+    return (
+        <>
+            <SEO
+                title='About — Tom Duranti'
+                description="Tom Duranti's project portfolio. React web apps including Mosaic and Pollen"
+            />
+        <CustomSectionLayout dir='row' justify='space-around' >{children}</CustomSectionLayout>
+        </>
+    );
+    
+    
 }
