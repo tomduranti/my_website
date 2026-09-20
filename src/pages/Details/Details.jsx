@@ -1,5 +1,6 @@
 //react
 import { useParams } from 'react-router';
+import { useLocation } from 'react-router';
 
 //mui
 import Box from '@mui/material/Box';
@@ -153,11 +154,14 @@ export default function Details() {
             <Paragraph header='futureIdeas' projectName={projectName} prop='margin-block-end: 4rem' />
         </>
 
+    const { pathname } = useLocation();
+
     return (
         <>
             <SEO
                 title={`${text[projectName].title} — Tom Duranti`}
                 description={`${text[projectName].title}, a ${text[projectName].type} by Tom Duranti. ${text[projectName].description}`}
+                pathname={pathname}
             />
             <CustomSectionLayout>{children}</CustomSectionLayout>
         </>

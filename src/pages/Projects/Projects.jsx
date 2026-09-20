@@ -1,5 +1,6 @@
 //react
 import { Link } from 'react-router';
+import { useLocation } from 'react-router';
 
 //mui
 import Box from '@mui/material/Box';
@@ -101,12 +102,15 @@ export default function Projects() {
             </Stack>
             <Box component='ul' sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: { xs: '3.5rem', md: '1.5rem', }, inlineSize: '100%', maxInlineSize: { md: '61.5rem', }, alignSelf: { md: 'end', } }}>{project}</Box>
         </>;
+    
+    const { pathname } = useLocation();
 
     return (
         <>
             <SEO
                 title='About — Tom Duranti'
                 description="Tom Duranti's project portfolio. React web apps including Mosaic and Pollen"
+                pathname={pathname}
             />
         <CustomSectionLayout dir='row' justify='space-around' >{children}</CustomSectionLayout>
         </>

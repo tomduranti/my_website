@@ -1,3 +1,6 @@
+//react
+import { useLocation } from 'react-router';
+
 //mui
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -79,11 +82,14 @@ export default function About() {
             </Stack>
         </>;
 
+    const { pathname } = useLocation();
+
     return (
         <>
             <SEO
                 title='About — Tom Duranti'
                 description='Tom Duranti, frontend developer. Skills in React, JavaScript, and MUI, plus certifications and background'
+                pathname={pathname}
             />
             <CustomSectionLayout>{children}</CustomSectionLayout>
         </>
