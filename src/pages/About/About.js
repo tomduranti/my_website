@@ -50,8 +50,9 @@ export const text = {
     certifications: {
         title: 'certifications',
         certificationList: [
-            { title: 'GitLab Certified Associate', id: generateId(), link: 'https://www.credly.com/badges/e1a15a4f-4038-4d33-82ec-24758cc9c72c/public_url' },
+            { title: 'Certified Junior React Developer (proctored)', id: generateId(), link: 'https://certificates.dev/c/a2c838dd-4c78-40a8-8e89-495a72c548d3' },
             { title: 'JSE™ – Certified Entry-Level JavaScript Programmer (proctored)', id: generateId(), link: 'https://www.credly.com/badges/e5b7b54b-3512-4991-af78-2c92eb420e81/public_url' },
+            { title: 'GitLab Certified Associate', id: generateId(), link: 'https://www.credly.com/badges/e1a15a4f-4038-4d33-82ec-24758cc9c72c/public_url' },
         ]
     }
 }
