@@ -22,7 +22,7 @@ import { generateId } from '../../utils/generateId.js';
 
 export const text = {
     mosaic: {
-        title: 'mosaic',
+        title: 'Mosaic',
         description: `Mosaic is a React application for browsing trending movies and TV shows via the TMDB API, built with a RESTful data layer and React Router.
                         While I started from an existing Figma design, I redesigned it to be faster and more minimal.`,
         type: 'web app',
@@ -110,7 +110,7 @@ export const text = {
         },
     },
     pollen: {
-        title: 'pollen',
+        title: 'Pollen',
         description: `Pollen is a React app that tracks pollen levels in a given location.
                         It also tells the severity of allergens and provides a forecast for the upcoming days.
                         It relies on two APIs: one for allergens and one for geolocation.

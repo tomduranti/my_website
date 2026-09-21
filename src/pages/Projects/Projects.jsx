@@ -108,7 +108,7 @@ export default function Projects() {
     return (
         <>
             <SEO
-                title='About — Tom Duranti'
+                title='My projects'
                 description="Tom Duranti's project portfolio. React web apps including Mosaic and Pollen"
                 pathname={pathname}
             />

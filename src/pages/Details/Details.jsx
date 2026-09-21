@@ -86,7 +86,7 @@ export default function Details() {
 
     const stackList = text[projectName].stack.map(stack => (
         <li key={stack.id}>
-            <Typography variant='detailedProjectDescription' component='span'>{stack.title}</Typography>
+            <Typography variant='detailedProjectDescription' component='span'>{stack.title.toLowerCase()}</Typography>
         </li>
     ));
 
@@ -159,7 +159,7 @@ export default function Details() {
     return (
         <>
             <SEO
-                title={`${text[projectName].title} — Tom Duranti`}
+                title={`${text[projectName].title}`}
                 description={`${text[projectName].title}, a ${text[projectName].type} by Tom Duranti. ${text[projectName].description}`}
                 pathname={pathname}
             />

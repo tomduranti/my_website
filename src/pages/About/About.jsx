@@ -87,7 +87,7 @@ export default function About() {
     return (
         <>
             <SEO
-                title='About — Tom Duranti'
+                title='About me'
                 description='Tom Duranti, frontend developer. Skills in React, JavaScript, and MUI, plus certifications and background'
                 pathname={pathname}
             />

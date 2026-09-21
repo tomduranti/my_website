@@ -7,8 +7,8 @@ export default function SEO({ title, description, pathname }) {
         <Helmet>
             <title>{title}</title>
             <meta name='description' content={description} />
-            <link rel="canonical" href={`https://tomduranti.com${pathname}`} />
-            <meta name="author" content="Tom Duranti" />
+            <link rel='canonical' href={`https://tomduranti.com${pathname}`} />
+            <meta name='author' content='Tom Duranti' />
         </Helmet>
     );
 }

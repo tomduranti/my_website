@@ -37,7 +37,7 @@ export default function Home() {
     return (
         <>
             <SEO
-                title='About — Tom Duranti'
+                title='Tom Duranti'
                 description='Tom Duranti — frontend developer. Building responsive, scalable web apps'
                 pathname={pathname}
             />
