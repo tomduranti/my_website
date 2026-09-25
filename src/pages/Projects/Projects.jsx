@@ -108,7 +108,7 @@ export default function Projects() {
         <>
             <SEO
                 title='My projects'
-                description="Tom Duranti's project portfolio. React web apps including Mosaic and Pollen"
+                description="Project portfolio page. React web apps including Mosaic and Pollen."
                 pathname={pathname}
             />
         <CustomSectionLayout dir='row' justify='space-around' >{children}</CustomSectionLayout>

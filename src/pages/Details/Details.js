@@ -24,7 +24,7 @@ export const text = {
     mosaic: {
         title: 'Mosaic',
         description: `Mosaic is a React application for browsing trending movies and TV shows via the TMDB API, built with a RESTful data layer and React Router.
-                        While I started from an existing Figma design, I redesigned it to be faster and more minimal.`,
+                        The app was redesigned from a previous Figma project to be faster and more minimal.`,
         type: 'web app',
         stack: [
             { title: 'react', id: generateId() },

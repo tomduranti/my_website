@@ -38,7 +38,7 @@ export default function Home() {
         <>
             <SEO
                 title='Tom Duranti'
-                description='Tom Duranti — frontend developer. Building responsive, scalable web apps'
+                description='Tom Duranti, frontend developer. Building responsive, scalable web apps.'
                 pathname={pathname}
             />
             <CustomSectionLayout>{children}</CustomSectionLayout>
