@@ -2,9 +2,7 @@
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import SvgIcon from '@mui/material/SvgIcon';
-
-//style
-import theme from '../../../theme/theme.jsx';
+import { useTheme } from '@mui/material/styles';
 
 //text
 import { text } from './Footer.js';
@@ -21,6 +19,8 @@ function SvgIconArrowFooter(props) {
 }
 
 function SocialLink({ social, where }) {
+    const theme = useTheme();
+    
     return (
         <Link href={where} style={{ display: 'flex', gap: '.5rem', 'alignItems': 'center', }} color={theme.vars.palette.text.secondary} underline='none' aria-label={`go to ${social}`}>
             <Typography variant='h5'>{social}</Typography>

@@ -29,7 +29,7 @@ export default function App() {
   }, [])
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme} defaultMode='system'>
       <CssBaseline enableColorScheme />
         <Box component='section' sx={{ backgroundColor: theme.vars.palette.primary.main }}>
           <Container maxWidth='98%' disableGutters sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: { xs: '.75rem', md: '2rem', }, minHeight: '100vh' }}>

@@ -6,9 +6,7 @@ import ThemeSwitcher from '../../atoms/ThemeSwitcher/ThemeSwitcher.jsx';
 //mui
 import Stack from '@mui/material/Stack';
 import SvgIcon from '@mui/material/SvgIcon';
-
-//style
-import theme from '../../../theme/theme.jsx';
+import { useTheme } from '@mui/material/styles';
 
 
 export function SvgIconLogo(props) {
@@ -25,6 +23,7 @@ export function SvgIconLogo(props) {
 }
 
 export default function Navbar() {
+  const theme = useTheme();
 
   return (
     <Stack direction='row' sx={{ justifyContent: 'space-between', alignItems: 'center', }}>

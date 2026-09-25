@@ -11,13 +11,11 @@ import LaunchIcon from '@mui/icons-material/Launch';
 import Stack from '@mui/material/Stack';
 import SvgIcon from '@mui/material/SvgIcon';
 import Typography from '@mui/material/Typography';
+import { useTheme } from '@mui/material/styles';
 
 //custom components
 import CustomSectionLayout from '../../components/styled/Layout.jsx';
 import SEO from '../../components/atoms/seo/seo.jsx';
-
-//style
-import theme from '../../theme/theme.jsx';
 
 //text
 import { text } from './Projects.js';
@@ -87,6 +85,7 @@ function ProjectCard({ image, title, paragraph, linkGithub, linkLive }) {
 }
 
 export default function Projects() {
+    const theme = useTheme();
 
     const project = text.projects.map(item => (
         <Box component='li' key={item.id} sx={{ maxInlineSize: { xs: '500px', md: '100%', }, inlineSize: { md: '100%' }, }}>

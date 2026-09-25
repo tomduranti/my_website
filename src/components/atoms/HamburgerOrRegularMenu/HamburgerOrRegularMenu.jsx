@@ -6,9 +6,9 @@ import { NavLink } from 'react-router';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 //style
-import theme from '../../../theme/theme.jsx';
 import styles from './_HamburgerOrRegularMenu.module.css';
 
 //text
@@ -18,6 +18,7 @@ import { text } from './HamburgerOrRegularMenu.js';
 export default function HamburgerMenu() {
     const [isOpen, setOpen] = useState(false);
     const regularMenu = useMediaQuery((theme) => theme.breakpoints.up('md'));
+    const theme = useTheme();
     const handleClick = () => {
         setOpen(!isOpen);
     }
