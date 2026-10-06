@@ -13,6 +13,9 @@ import SvgIcon from '@mui/material/SvgIcon';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 
+//i18n
+import { useTranslation } from 'react-i18next';
+
 //custom components
 import CustomSectionLayout from '../../components/styled/Layout.jsx';
 import SEO from '../../components/atoms/seo/seo.jsx';
@@ -31,11 +34,13 @@ function SvgIconArrowDecoration(props) {
     );
 }
 
-function ProjectCard({ image, title, paragraph, linkGithub, linkLive }) {
+function ProjectCard({ image, titleForUrl, title, paragraph, linkGithub, linkLive }) {
+    const { t } = useTranslation();
+
     return (
         <Card sx={{ background: 'transparent', boxShadow: '0', display: 'flex', flexDirection: { xs: 'column', md: 'row', }, gap: '2rem' }}>
             <Box sx={{ order: { md: 2 }, inlineSize: { md: '50%' } }}>
-                <Link to={`/projects/${title}`}>
+                <Link to={`/projects/${titleForUrl}`}>
                     <Box
                         component="picture"
                         sx={{
@@ -69,7 +74,7 @@ function ProjectCard({ image, title, paragraph, linkGithub, linkLive }) {
             <CardContent sx={{ padding: '0', '&:last-child': { paddingBottom: 0 }, display: { md: 'flex' }, flexDirection: { md: 'column', }, justifyContent: { md: 'flex-end', }, inlineSize: { md: '50%', }, }}>
                 <Stack direction='row' sx={{ justifyContent: 'space-between', marginBottom: '.5rem', maxInlineSize: { md: '90%', } }}>
                     <Typography variant='h4' sx={{ lineHeight: '1.875rem', fontSize: '1.563rem' }}>
-                        {title}
+                        {t(title)}
                     </Typography>
                     <Stack direction='row' spacing={2}>
                         <a href={linkGithub} aria-label='go to github repo'><GitHubIcon /></a>
@@ -77,7 +82,7 @@ function ProjectCard({ image, title, paragraph, linkGithub, linkLive }) {
                     </Stack>
                 </Stack>
                 <Typography variant='body2'>
-                    {paragraph}
+                    {t(paragraph)}
                 </Typography>
             </CardContent>
         </Card>
@@ -85,24 +90,25 @@ function ProjectCard({ image, title, paragraph, linkGithub, linkLive }) {
 }
 
 export default function Projects() {
+    const { t } = useTranslation();
     const theme = useTheme();
+    const { pathname } = useLocation();    
 
     const project = text.projects.map(item => (
         <Box component='li' key={item.id} sx={{ maxInlineSize: { xs: '500px', md: '100%', }, inlineSize: { md: '100%' }, }}>
-            <ProjectCard image={item.image} title={item.title} paragraph={item.paragraph} linkGithub={item.linkGithub} linkLive={item.linkLive} sx={{ textDecoration: 'capitalize', }} />
+            <ProjectCard image={item.image} titleForUrl={item.titleForUrl} title={item.title} paragraph={item.paragraph} linkGithub={item.linkGithub} linkLive={item.linkLive} sx={{ textDecoration: 'capitalize', }} />
         </Box>
     ));
 
     const children =
         <>
             <Stack direction='row' spacing={1} sx={{ alignItems: 'start', }}>
-                <Typography variant='h3'>{text.title}</Typography>
+                <Typography variant='h3'>{t(text.title)}</Typography>
                 <SvgIconArrowDecoration sx={{ inlineSize: '35px', blockSize: '35px', alignSelf: 'start', color: theme.vars.palette.icon.secondary }} />
             </Stack>
             <Box component='ul' sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: { xs: '3.5rem', md: '1.5rem', }, inlineSize: '100%', maxInlineSize: { md: '61.5rem', }, alignSelf: { md: 'end', } }}>{project}</Box>
         </>;
     
-    const { pathname } = useLocation();
 
     return (
         <>

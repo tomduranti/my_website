@@ -13,11 +13,15 @@ import Typography from '@mui/material/Typography';
 import CustomSectionLayout from '../../components/styled/Layout.jsx';
 import SEO from '../../components/atoms/seo/seo.jsx';
 
+//i18n
+import { useTranslation } from 'react-i18next';
+
 //text
 import { icons, text } from './About.js';
 
 
 export default function About() {
+    const { t } = useTranslation();
 
     const skills = icons.map(item => (
         <Grid key={item.id} sx={{
@@ -34,15 +38,15 @@ export default function About() {
 
     const certifications = text.certifications.certificationList.map(item => (
         <li key={item.id}>
-            <Link href={item.link} aria-label={`${item.title} certification`}>
-                <Typography variant='h4'>{item.title}</Typography>
+            <Link href={item.link} aria-label={`${t(item.title)} certification`}>
+                <Typography variant='h4'>{t(item.title)}</Typography>
             </Link>
         </li>
     ));
 
     const paragraphs = text.about.paragraph.map(paragraph => (
         <li key={paragraph.id}>
-            <Typography variant='body1'>{paragraph.text}</Typography>
+            <Typography variant='body1'>{t(paragraph.text)}</Typography>
         </li>
     ));
 
@@ -55,7 +59,7 @@ export default function About() {
                 alignItems: { lg: 'baseline' },
                 alignSelf: { lg: 'center' },
             }} spacing={5}>
-                <Typography sx={{ inlineSize: { lg: '50%', }, }} variant='h3'>{text.about.title}</Typography>
+                <Typography sx={{ inlineSize: { lg: '50%', }, }} variant='h3'>{t(text.about.title)}</Typography>
                 <Stack sx={{ alignContent: 'center', inlineSize: { lg: '50%', }, }} spacing={4}>
                     <Box component='ul' sx={{ display: 'flex', flexDirection: 'column', gap: { xs: '2rem', }, }}>{paragraphs}</Box>
                 </Stack>
@@ -69,7 +73,7 @@ export default function About() {
                 alignItems: { lg: 'baseline' },
                 alignSelf: { lg: 'center' },
             }} spacing={{ xs: 5, lg: 0, }}>
-                <Typography sx={{ inlineSize: { lg: '50%', }, }} variant='h3'>{text.skills.title}</Typography>
+                <Typography sx={{ inlineSize: { lg: '50%', }, }} variant='h3'>{t(text.skills.title)}</Typography>
                 <Grid container columns={5} rowSpacing={{ xs: '1.688rem', md: '2rem' }} spacing={1} sx={{ alignSelf: { md: 'center', }, justifyContent: 'center', maxInlineSize: { md: '80%', lg: '50%', }, }}>{skills}</Grid>
             </Stack>
 
@@ -77,7 +81,7 @@ export default function About() {
                 inlineSize: { lg: '80%' },
                 alignSelf: { lg: 'center' },
             }} spacing={4}>
-                <Typography variant='h3'>{text.certifications.title}</Typography>
+                <Typography variant='h3'>{t(text.certifications.title)}</Typography>
                 <Box component='ul' sx={{ display: 'flex', flexDirection: 'column', gap: { xs: '.5rem', md: '1.3rem', }, }}>{certifications}</Box>
             </Stack>
         </>;

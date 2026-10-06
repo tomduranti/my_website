@@ -2,6 +2,7 @@
 import { NavLink } from 'react-router';
 import HamburgerOrRegularMenu from '../../atoms/HamburgerOrRegularMenu/HamburgerOrRegularMenu.jsx';
 import ThemeSwitcher from '../../atoms/ThemeSwitcher/ThemeSwitcher.jsx';
+import LanguageSwitcher from '../../atoms/LanguageSwitcher/LanguageSwitcher.jsx';
 
 //mui
 import Stack from '@mui/material/Stack';
@@ -9,7 +10,7 @@ import SvgIcon from '@mui/material/SvgIcon';
 import { useTheme } from '@mui/material/styles';
 
 
-export function SvgIconLogo(props) {
+function SvgIconLogo(props) {
   return (
     <SvgIcon {...props}>
       <svg width='41' height='45' viewBox='0 0 41 45' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -29,6 +30,7 @@ export default function Navbar() {
     <Stack direction='row' sx={{ justifyContent: 'space-between', alignItems: 'center', }}>
       <HamburgerOrRegularMenu />
       <Stack direction='row' sx={{ alignItems: 'center', }} spacing={4}>
+        <LanguageSwitcher />
         <ThemeSwitcher />
         <NavLink to='/' style={{ zIndex: 3, lineHeight: 0, fontSize: 0, }} aria-label='logo'>
           <SvgIconLogo sx={{ inlineSize: { xs: '3rem', md: '3.5rem' }, blockSize: { xs: '3rem', md: '3.5rem' }, color: theme.vars.palette.icon.main, }} />

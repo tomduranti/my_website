@@ -1,0 +1,98 @@
+{
+    "nav": {
+        "home": "home",
+        "about": "chi sono",
+        "projects": "progetti"
+    },
+    "footer": {
+        "github": "github",
+        "email": "email",
+        "linkedIn": "linkedIn"
+    },
+    "homePage": {
+        "myName": "tom duranti",
+        "jobTitle": "sviluppatore frontend",
+        "jobDescription": "web app responsive e scalabili"
+    },
+    "aboutPage": {
+        "title": "qualche riga su di me",
+        "paragraph": {
+            "paragraph1": "Questa non è l'ennesima biografia che racconta di 'passione' o 'attenzione ai dettagli'. Promesso.",
+            "paragraph2": "Sono entrato in tech dopo la laurea e ho lavorato come linguista computazionale. Sviluppare chatbot mi ha dato il primo vero assaggio di sviluppo software e buone pratiche di programmazione.",
+            "paragraph3": "Con l'espandersi dei progetti, ho perso di vista l'impatto reale del mio lavoro sugli utenti. Le parti che amavo come scrivere script per pulire i dataset o creare test case per migliorare il prodotto erano state sostituite da task ripetitivi e a breve termine.",
+            "paragraph4": "La svolta è arrivata quando mi sono imbattuto nella 'Fenomenologia dello spirito' di Hegel. Il concetto di emancipazione attraverso il lavoro ha risuonato con la mia situazione: un progetto svolto dall'inizio alla fine senza tralasciare nulla. Era proprio quello che avevo perso: la possibilità di creare qualcosa da cima a fondo.",
+            "paragraph5": "Lo sviluppo web è esattamente questo per me: gestione completa dall'inizio alla fine. Mi piace progettare un nuovo prodotto dalla prima idea fino al lancio. Ciò che non mi piace è spingere una metrica qua e là senza mai vedere il prodotto finito.",
+            "paragraph6": "Da più di un anno non salto un solo giorno di studio e programmazione. Ho sempre un progetto in cantiere non perché devo, ma perché fa parte di me. Sto ancora imparando e oggi non fa eccezione."
+        },
+        "skills": {
+            "title": "skills"
+        },
+        "certifications": {
+            "title": "certificazioni",
+            "certificationList": {
+                "juniorReactDeveloper": "Certified Junior React Developer (supervisionato)",
+                "entryLevelJavascriptProgrammer": "JSE™ – Certified Entry-Level JavaScript Programmer (supervisionato)",
+                "gitLabCertAssociate": "GitLab Certified Associate"
+            }
+        }
+    },
+    "projectsPage": {
+        "title": "cosa ho sviluppato",
+        "projects": {
+            "mosaic": {
+                "title": "mosaic",
+                "paragraph": "Film e serie tv di tendenza in un paio di click"
+            },
+            "pollen": {
+                "title": "pollen",
+                "paragraph": "Se soffri di allergie, questa app traccia gli allergeni nella tua città"
+            }
+        }
+    },
+    "detailsPage": {
+        "headers": {
+            "goal": "obiettivi",
+            "highlights": "highlights",
+            "futureIdeas": "sviluppi futuri"
+        },
+        "mosaic": {
+            "title": "Mosaic",
+            "description": "Mosaic è un'applicazione React per esplorare film e serie TV del momento tramite l'API di TMDB, realizzata con un layer dati RESTful e React Router. L'app è stata riprogettata da un precedente progetto Figma per essere più veloce e minimale.",
+            "type": "web app",
+            "status": "live",
+            "goal": {
+                "paragraph1": "L'idea inziale era creare un'app per rimanere aggiornati sui film e sulle serie TV in uscita. In seguito ho aggiunto la sezione 'guardare più tardi' e ciò ha guidato l'implementazione verso il caching dei dati con useState anche per evitare colli di bottiglia dovuti a troppe chiamate API. Per dare priorità visiva ai contenuti ho aggiunto un carosello.",
+                "paragraph2": "L'ultima fase del progetto ha riguardato l'implementazione della funzionalità per i trailer. Questa funzione specifica non faceva parte del design originale quindi l'ho progettata da zero con uno stile minimale."
+            },
+            "highlights": {
+                "paragraph1": "L'app è costruita su griglie e liste che vengono renderizzate su varie dimensioni di viewport; isolare i componenti in Storybook mi ha permesso di individuare in anticipo problemi di scrolling orizzontale e key mancanti nelle liste.",
+                "paragraph2": "Il carosello e lunghe liste di elementi creano attrito nella navigazione da tastiera, oltre a peggiorare lo scansionamento degli screen reader del contenuto della pagina. Ho aggiunto gli skip links per permettere agli utenti di spostarsi tra le sezioni interne saltando o esplorando direttamente gli elementi. L'app è completamente navigabile da tastiera.",
+                "paragraph3": "L'uso del local storage per salvare gli elementi mi evita l'uso di Redux o di un lavoro ad hoc di backend, mantenendo l'opzione di recupero dell'elemento selezionato da qualsiasi pagina. Il limite di questa scelta è la mancanza di sincronizzazione tra diversi dispositivi."
+            },
+            "futureIdeas": {
+                "paragraph1": "La lezione più importante che ho imparato è che il codice 'temporaneo' è qui per rimanere. Nelle prime fasi del progetto avevo creato dipendenze disordinate, componenti monouso e una giungla di cartelle e sottocartelle solo per 'committare in fretta'. Ho realizzato presto che questo approccio si sarebbe rivelato controproducente. Ho quindi fatto un refactoring con atomic design, Sass modulare e BEM, e ora applico questo framework organizzativo a ogni nuovo progetto.",
+                "paragraph2": "Una funzionalità che potrei aggiungere in futuro è l'integrazione con un'API per verificare quali cinema nelle vicinanze proiettano un dato film. Tuttavia, i costi di quell'API sono al momento proibitivi."
+            }
+        },
+        "pollen": {
+            "title": "Pollen",
+            "description": "Pollen è un'app React che traccia i livelli di polline in una determinata località. Indica inoltre la gravità degli allergeni e fornisce le previsioni per i giorni successivi. Si basa su due API: una per gli allergeni e una per la geolocalizzazione. Tutte le informazioni dell'utente sono archiviate in Firebase, con una fase di autenticazione supportata da Zod per la validazione. Il design di Figma è originale.",
+            "type": "web app",
+            "status": "live",
+            "goal": {
+                "paragraph1": "Soffro di allergia al polline e volevo un'app per verificare i livelli del polline in un'area.",
+                "paragraph2": "Volendo monitorare i dati per la mia città, aveva senso salvare una posizione preferita nel database di Firebase consentendo all'app di recuperare automaticamente i dati a ogni apertura."
+            },
+            "highlights": {
+                "paragraph1": "L'API Polleninformation è limitata a circa 40 chiamate al giorno. Alla prima richiesta salvo la risposta in cache; le richieste successive verificano il timestamp della cache e la servono se ha meno di 4 ore (i livelli di allergeni non cambiano così velocemente). Questo mantiene l'app utilizzabile ben oltre il limite dell'API senza costi aggiuntivi.",
+                "paragraph2": "L'API Polleninformation utilizza dati di geolocalizzazione ed è per questo che ho introdotto l'API di Geocoding per convertire la stringa di testo inserita dall'utente per ricercare una città in coordinate x e y.",
+                "paragraph3": "Per supportare la sincronizzazione tra più dispositivi, ho utilizzato Firebase, essendo un database NoSQL con diverse opzioni di accesso disponibili.",
+                "paragraph4": "Zod gestisce il workflow dell'autenticazione. Due funzioni forniscono la validazione dell'e-mail e della password durante l'accesso prima che raggiungano il database."
+            },
+            "futureIdeas": {
+                "paragraph1": "Al momento, l'app funziona solo in inglese, ma i nomi dei pollini e delle piante non sono facilimente riconoscibili da un non madrelingua. Quindi, ho intenzione di aggiungere un supporto multilingua.",
+                "paragraph2": "Vorrei anche espandere le funzionalità dell'account utente consentendo a ciascuno di aggiungere un'immagine del profilo."
+            }
+        }
+    }
+}
