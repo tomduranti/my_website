@@ -12,6 +12,9 @@ import SvgIcon from '@mui/material/SvgIcon';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 
+//i18n
+import { useTranslation } from 'react-i18next';
+
 //custom components
 import CustomSectionLayout from '../../components/styled/Layout.jsx';
 import SEO from '../../components/atoms/seo/seo.jsx';
@@ -33,13 +36,14 @@ function SvgIconArrowDecoration(props) {
 
 function Paragraph({ header, projectName, prop = '' }) {
     const theme = useTheme();
+    const { t } = useTranslation();
 
     const paragraphList = section => {
-        return text[projectName][section].paragraphs.map((paragraph, index, array) => (
+        return text[projectName][section].map((paragraph, index, array) => (
             <li key={index}>
                 <Stack direction='row' spacing={3} sx={{ alignItems: 'center', marginBlockEnd: (index === array.length - 1 ? null : '1.5rem') }}>
                     <CircleIcon sx={{ inlineSize: '31px', blockSize: '31px', color: theme.vars.palette.icon.main }} />
-                    <Typography variant='detailedProjectDescription' component='span'>{paragraph}</Typography>
+                    <Typography variant='detailedProjectDescription' component='span'>{t(paragraph.paragraph)}</Typography>
                 </Stack>
             </li>
         ))
@@ -47,7 +51,7 @@ function Paragraph({ header, projectName, prop = '' }) {
 
     return (
         <Stack spacing={5} sx={{ inlineSize: '100%', maxInlineSize: { lg: '51%', }, ...prop }}>
-            <Typography variant="detailedSectionTitle">{text[projectName][header].title}</Typography>
+            <Typography variant="detailedSectionTitle">{t(text.headers[header])}</Typography>
             <ul>{paragraphList(header)}</ul>
         </Stack>
     )
@@ -55,8 +59,9 @@ function Paragraph({ header, projectName, prop = '' }) {
 
 export default function Details() {
     const theme = useTheme();
-
+    const { t } = useTranslation();
     let { projectName } = useParams();
+    const { pathname } = useLocation();
 
     const imageList = text[projectName].image.gallery.map(image => (
         <li key={image.id}>
@@ -72,7 +77,7 @@ export default function Details() {
                 <Box
                     component="img"
                     src={image.link.xs}
-                    alt={`${text[projectName].title} image`}
+                    alt={`${t(text[projectName].title)} image`}
                     sx={{
                         inlineSize: '100%',
                         blockSize: '100%',
@@ -95,16 +100,16 @@ export default function Details() {
             <Stack spacing={{ xs: 5, md: 7, }} sx={{ flexDirection: { lg: 'row', }, justifyContent: { lg: 'space-between', }, }}>
                 <Stack spacing={2}>
                     <SvgIconArrowDecoration sx={{ inlineSize: '3.188rem', blockSize: '3.188rem', color: theme.vars.palette.icon.secondary, }} />
-                    <Typography variant='detailedProjectName' sx={{ paddingInlineStart: '1rem', }}>{text[projectName].title}</Typography>
+                    <Typography variant='detailedProjectName' sx={{ paddingInlineStart: '1rem', }}>{t(text[projectName].title)}</Typography>
                 </Stack>
 
                 <Stack spacing={{ xs: 4, md: 7, }} sx={{ inlineSize: '100%', maxInlineSize: { lg: '600px', }, }}>
-                    <Typography variant='detailedProjectDescription' >{text[projectName].description}</Typography>
+                    <Typography variant='detailedProjectDescription' >{t(text[projectName].description)}</Typography>
                     <Grid container spacing={2} sx={{ inlineSize: { md: '100%', }, maxInlineSize: { md: '33rem', }, alignSelf: { md: 'center', lg: 'start', }, textAlign: 'center', }}>
                         <Grid size='grow'>
                             <Stack spacing={2}>
                                 <Typography variant='detailedStackDescription'>type</Typography>
-                                <Typography variant='detailedProjectDescription' component='span'>{text[projectName].type}</Typography>
+                                <Typography variant='detailedProjectDescription' component='span'>{t(text[projectName].type)}</Typography>
                             </Stack>
                         </Grid>
 
@@ -119,7 +124,7 @@ export default function Details() {
                             <Stack spacing={2}>
                                 <Typography variant='detailedStackDescription'>status</Typography>
                                 <Link href={text[projectName].status.link} aria-label={`go to ${text[projectName].title} live project`}>
-                                    <Typography variant='detailedProjectDescription' component='span' sx={{ color: theme.vars.palette.text.status.live }}>{text[projectName].status.status}</Typography>
+                                    <Typography variant='detailedProjectDescription' component='span' sx={{ color: theme.vars.palette.text.status.live }}>{t(text[projectName].status.status)}</Typography>
                                 </Link>
                             </Stack>
                         </Grid>
@@ -154,7 +159,6 @@ export default function Details() {
             <Paragraph header='futureIdeas' projectName={projectName} prop='margin-block-end: 4rem' />
         </>
 
-    const { pathname } = useLocation();
 
     return (
         <>

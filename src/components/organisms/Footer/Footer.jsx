@@ -4,6 +4,9 @@ import Link from '@mui/material/Link';
 import SvgIcon from '@mui/material/SvgIcon';
 import { useTheme } from '@mui/material/styles';
 
+//i18n
+import { useTranslation } from 'react-i18next';
+
 //text
 import { text } from './Footer.js';
 
@@ -30,9 +33,10 @@ function SocialLink({ social, where }) {
 }
 
 export default function Footer() {
+    const { t } = useTranslation();
     const links = text.map(item => (
         <li key={item.id}>
-            <SocialLink social={item.title} where={item.link}></SocialLink>
+            <SocialLink social={t(item.title)} where={t(item.link)}></SocialLink>
         </li>
     ));
 

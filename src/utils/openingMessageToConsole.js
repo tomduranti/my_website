@@ -14,6 +14,6 @@ export const openingMessageToConsole = `
           #      #####    #####   #
 
 ========================================
-        FOR VISITING MY WEBSITE!
+        FOR VISITING MY WEBSITE
 ========================================
 `;
