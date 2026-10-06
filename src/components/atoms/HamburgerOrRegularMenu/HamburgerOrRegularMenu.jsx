@@ -8,6 +8,9 @@ import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
+//i18n
+import { useTranslation } from 'react-i18next';
+
 //style
 import styles from './_HamburgerOrRegularMenu.module.css';
 
@@ -22,11 +25,13 @@ export default function HamburgerMenu() {
     const handleClick = () => {
         setOpen(!isOpen);
     }
+    const { t } = useTranslation();
+
     const hamburgerOrRegularLink = text.map(item => {
         return (
             <li key={item.id}>
                 <NavLink to={item.link} style={({ isActive }) => ({ color: isActive ? theme.vars.palette.text.primary : theme.vars.palette.text.contrastText })} onClick={handleClick}>
-                    <Typography variant='h2'>{item.title}</Typography>
+                    <Typography variant='h2'>{t(item.title)}</Typography>
                 </NavLink>
             </li>
         );

@@ -10,10 +10,12 @@ import pollenPresentationLg from '../../assets/Projects/Presentation/lg/pollenPr
 import { generateId } from '../../utils/generateId.js';
 
 export const text = {
-    title: "things i've built",
+    title: "projectsPage.title",
     projects: [
         {
-            title: 'mosaic', id: generateId(),
+            title: 'projectsPage.projects.mosaic.title',
+            titleForUrl: "mosaic",
+            id: generateId(),
             image: {
                 xs: mosaicPresentationXs,
                 md: mosaicPresentationMd,
@@ -21,10 +23,11 @@ export const text = {
             },
             linkGithub: 'https://github.com/tomduranti/mosaic',
             linkLive: 'https://tomduranti.github.io/mosaic/home',
-            paragraph: 'Latest movies and tv series in a couple of clicks'
+            paragraph: 'projectsPage.projects.mosaic.paragraph'
         },
         {
-            title: 'pollen',
+            title: 'projectsPage.projects.pollen.title',
+            titleForUrl: "pollen",
             id: generateId(),
             image: {
                 xs: pollenPresentationXs,
@@ -33,7 +36,7 @@ export const text = {
             },
             linkGithub: 'https://github.com/tomduranti/pollen',
             linkLive: 'https://tomduranti.github.io/pollen/signup',
-            paragraph: 'If you suffer from allergies this app tracks allergens spreading in your city'
+            paragraph: 'projectsPage.projects.pollen.paragraph'
         }
     ]
 }

@@ -21,9 +21,23 @@ This is V1 of my website showcasing the best works and other information. It was
 ### Highlights
 
 - Light/Dark mode toggle
-- Indexed on Google
-- SEO-optimized meta tags via react-helmet-async
+- SEO-optimized meta tags via react-helmet-async. This makes up for the poor SEO friendliness of CSR (or at least it tries to). I am considering using React Router (framework mode) to mimic SSR.
 
-### Further enhancements
+## Changelog
+All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
-Multilingual support for it, de, ru.
+#### [v1.0.1] – [06/10/2026]
+![ADDED](https://img.shields.io/badge/ADDED-green)
+- multilingual support for it-IT
+
+#### [v1.0.0] – [26/09/2026]
+![ADDED](https://img.shields.io/badge/ADDED-green)
+- home, about, and projects pages 
+- light/dark mode toggle
+- puppetter to mock SSR for indexing the website on google search
+
+## Roadmap
+
+#### [v1.0.2] -- Unreleased
+![ADDED](https://img.shields.io/badge/ADDED-green)
+- multilingual support for ru-RU

@@ -1,0 +1,98 @@
+{
+    "nav": {
+        "home": "home",
+        "about": "about",
+        "projects": "projects"
+    },
+    "footer": {
+        "github": "github",
+        "email": "email",
+        "linkedIn": "linkedIn"
+    },
+    "homePage": {
+        "myName": "tom duranti",
+        "jobTitle": "frontend developer",
+        "jobDescription": "building responsive, scalable web apps"
+    },
+    "aboutPage": {
+        "title": "about me",
+        "paragraph": {
+            "paragraph1": "You won't read yet another 'passionate', 'detail-oriented' bullshit bio. I promise.",
+            "paragraph2": "I moved into tech after graduation and worked as a computational linguist. Building chatbots for a living gave me my first real taste of software development and coding practices.",
+            "paragraph3": "As the company's projects expanded, I lost touch with how my work affected real users. The parts I loved like writing scripts to sanitise datasets, or writing test cases to make a better product, got replaced by scattered, sloppy tasks.",
+            "paragraph4": "The turning point came when I came across Hegel's Phenomenology of Spirit. The concept of emancipation through work clicked into place, like a missing piece of a puzzle: work done meaningfully and masterfully from start to finish with nothing left unexamined. That's what I'd lost: the chance to craft something end to end.",
+            "paragraph5": "Web development is exactly that: end-to-end ownership. I enjoy planning a new product from the first idea to launch. What I don't enjoy is nudging a metric here or there and never getting to see the finished artifact.",
+            "paragraph6": "For more than a year now, I haven't skipped a day of studying and programming. I always have a project in the works not because I have to, but because it's part of me. I'm still learning and today's no exception."
+        },
+        "skills": {
+            "title": "skills"
+        },
+        "certifications": {
+            "title": "certifications",
+            "certificationList": {
+                "juniorReactDeveloper": "Certified Junior React Developer (proctored)",
+                "entryLevelJavascriptProgrammer": "JSE™ – Certified Entry-Level JavaScript Programmer (proctored)",
+                "gitLabCertAssociate": "GitLab Certified Associate"
+            }
+        }
+    },
+    "projectsPage": {
+        "title": "things i've built",
+        "projects": {
+            "mosaic": {
+                "title": "mosaic",
+                "paragraph": "Latest movies and tv series in a couple of clicks"
+            },
+            "pollen": {
+                "title": "pollen",
+                "paragraph": "If you suffer from allergies this app tracks allergens spreading in your city"
+            }
+        }
+    },
+    "detailsPage": {
+        "headers": {
+            "goal": "goals",
+            "highlights": "highlights",
+            "futureIdeas": "what's next"
+        },
+        "mosaic": {
+            "title": "Mosaic",
+            "description": "Mosaic is a React application for browsing trending movies and TV shows via the TMDB API, built with a RESTful data layer and React Router. The app was redesigned from a previous Figma project to be faster and more minimal.",
+            "type": "web app",
+            "status": "live",
+            "goal": {
+                "paragraph1": "The idea behind this project was to have a single app to keep up with trending movies and TV shows. I then built upon that by adding a bookmarking section for 'watch later' items. These requirements steered the implementation toward data caching in React useStates, since frequent API calls might cause a bottleneck. To give trending media visual priority, I built a carousel.",
+                "paragraph2": "The last phase of the project was implementing a trailer feature. This specific feature wasn't part of the original design so designed it myself, keeping it minimal."
+            },
+            "highlights": {
+                "paragraph1": "The app relies heavily on grids and lists which also render across many viewport sizes, so isolating components in Storybook let me catch horizontal scrolling, and missing list keys in advance.",
+                "paragraph2": "The carousel and long lists create friction for keyboard navigation. They also degrade screen-readers' ability to quickly parse a page's content. I added skip links to jump between internal sections so users can skip or dive into items. The app is fully keyboard-navigable.",
+                "paragraph3": "The use of local storage to save items is convenient to avoid the overhead of Redux or backend work and makes retrieval seamless from any page. The limitation of this approach is the lack of cross-device sync."
+            },
+            "futureIdeas": {
+                "paragraph1": "The hard-earned lesson of this project is that 'temporary' crappy code is here to stay. In the early stage, I created messy dependencies, one-shot components, and a jungle of folders and subfolders, just to 'do things quickly and move on'. I soon realised this approach would backfire. I refactored toward atomic design, modular Sass, and BEM, and now apply that structure from day one on every new project.",
+                "paragraph2": "One feature I might add down the line is the integration with a showtime API to check which cinemas offer that movie nearby. Unfortunately, the costs of that API are prohibitive right now."
+            }
+        },
+        "pollen": {
+            "title": "Pollen",
+            "description": "Pollen is a React app that tracks pollen levels in a given location. It also tells the severity of allergens and provides a forecast for the upcoming days. It relies on two APIs: one for allergens and one for geolocation. All user information is stored in Firebase, with an authentication step backed by Zod for validation. The Figma design is original.",
+            "type": "web app",
+            "status": "live",
+            "goal": {
+                "paragraph1": "I suffer from pollen allergies and needed a way to check whether a place is low-pollen.",
+                "paragraph2": "Since I wanted to monitor data for my city, it made sense to save a favourite location stored in the Firebase DB, so the app could automatically fetch data for it every time it opens."
+            },
+            "highlights": {
+                "paragraph1": "Polleninformation API caps at ~40 requests/day. On first request I cache the response; subsequent requests check the cache timestamp and serve it if under 4 hours old (allergen levels don't shift fast enough to need fresher data). This keeps the app usable well past the API's own limit without extra cost.",
+                "paragraph2": "Polleninformation API consumes geolocation data, and that's why I introduced the Geocoding API to convert a user-entered string for a location into x- and y-coordinate.",
+                "paragraph3": "To support cross-device sync, the app needs a single source of truth and always-fresh data. Firebase fits well here being a NoSQL database with multiple sign-in methods available.",
+                "paragraph4": "Zod handles the auth workflow. A couple of functions provide schema validation for email and password while signing in before they reach the database."
+            },
+            "futureIdeas": {
+                "paragraph1": "The app currently works only in English, yet pollen and plant names aren't easy to recognise for non-English speakers. Therefore, I plan to add multilingual support.",
+                "paragraph2": "I'd also like to expand user account functionality by letting each user add a profile picture."
+            }
+        }
+    }
+}

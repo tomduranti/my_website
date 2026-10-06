@@ -16,43 +16,25 @@ import { generateId } from '../../utils/generateId.js';
 
 export const text = {
     about: {
-        title: 'about me',
+        title: 'aboutPage.title',
         paragraph: [
-            { text: `You won't read yet another 'passionate', 'detail-oriented' bullshit bio. I promise.`, id: generateId() },
-            { text: `I moved into tech after graduation and worked as a computational linguist. Building chatbots for a living gave me my first real taste of software development and coding practices.`, id: generateId() },
-            {
-                text: `As the company's projects expanded, I lost touch with how my work affected real users.
-                The parts I loved like writing scripts to sanitise datasets, or writing test cases to make a better product,
-                got replaced by scattered, sloppy tasks.`, id: generateId()
-            },
-            {
-                text: `The turning point came when I came across Hegel's Phenomenology of Spirit.
-                The concept of emancipation through work clicked into place, like a missing piece of a puzzle:
-                work done meaningfully and masterfully from start to finish with nothing left unexamined.
-                That's what I'd lost: the chance to craft something end to end.`, id: generateId()
-            },
-            {
-                text: `Web development is exactly that: end-to-end ownership.
-                I enjoy planning a new product from the first idea to launch.
-                What I don't enjoy is nudging a metric here or there and never getting to see the finished artifact.`, id: generateId()
-            },
-            {
-                text: `For more than a year now, I haven't skipped a day of studying and programming.
-                I always have a project in the works not because I have to, but because it's part of me.
-                I'm still learning and today's no exception.`, id: generateId()
-            },
+            { text: 'aboutPage.paragraph.paragraph1', id: generateId() },
+            { text: 'aboutPage.paragraph.paragraph2', id: generateId() },
+            { text: 'aboutPage.paragraph.paragraph3', id: generateId() },
+            { text: 'aboutPage.paragraph.paragraph4', id: generateId() },
+            { text: 'aboutPage.paragraph.paragraph5', id: generateId() },
+            { text: 'aboutPage.paragraph.paragraph6', id: generateId() },
         ],
     },
     skills: {
-        title: 'skills',
-        paragraph: 'Here are the languages and frameworks I am proficient in',
+        title: 'aboutPage.skills.title',
     },
     certifications: {
-        title: 'certifications',
+        title: 'aboutPage.certifications.title',
         certificationList: [
-            { title: 'Certified Junior React Developer (proctored)', id: generateId(), link: 'https://certificates.dev/c/a2c838dd-4c78-40a8-8e89-495a72c548d3' },
-            { title: 'JSE™ – Certified Entry-Level JavaScript Programmer (proctored)', id: generateId(), link: 'https://www.credly.com/badges/e5b7b54b-3512-4991-af78-2c92eb420e81/public_url' },
-            { title: 'GitLab Certified Associate', id: generateId(), link: 'https://www.credly.com/badges/e1a15a4f-4038-4d33-82ec-24758cc9c72c/public_url' },
+            { title: 'aboutPage.certifications.certificationList.juniorReactDeveloper', id: generateId(), link: 'https://certificates.dev/c/a2c838dd-4c78-40a8-8e89-495a72c548d3' },
+            { title: 'aboutPage.certifications.certificationList.entryLevelJavascriptProgrammer', id: generateId(), link: 'https://www.credly.com/badges/e5b7b54b-3512-4991-af78-2c92eb420e81/public_url' },
+            { title: 'aboutPage.certifications.certificationList.gitLabCertAssociate', id: generateId(), link: 'https://www.credly.com/badges/e1a15a4f-4038-4d33-82ec-24758cc9c72c/public_url' },
         ]
     }
 }
